@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accessories & Toys - Mapla Menswear</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+ <style>
+  .hidden { display: none !important; }
+
+  /* ✅ Categories as grid */
+  .categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    justify-items: center;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;   /* ✅ Always square */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .card button {
+    margin-top: 10px;
+    background: gold;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .card button:hover {
+    background: black;
+    color: white;
+  }
+
+  .price {
+    color: green;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  /* ✅ Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.7);
+  }
+
+  .modal-content {
+    margin: 5% auto;
+    background: white;
+    padding: 15px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    background: #f1f1f1;
+    border-radius: 50%;
+    padding: 5px 10px;
+    transition: 0.3s;
+  }
+
+  .close-btn:hover {
+    background: #b91372;
+    color: #fff;
+  }
+
+  .modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  /* ✅ Mobile override – 2x2 grid + square image */
+  @media (max-width: 768px) {
+    .categories {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      padding: 15px;
+    }
+
+    .card {
+      max-width: 100%;
+      padding: 10px;
+    }
+
+    .card img {
+      aspect-ratio: 1 / 1;   /* ✅ square on mobile too */
+      height: auto;
+    }
+
+    .card h2, .card p, .card button {
+      font-size: 14px;
+    }
+
+    .price {
+      font-size: 13px;
+    }
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <p>🛍 Accessories & Toys - New Arrivals 🛍</p>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Logo">
+      Confusion Menswear
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shirts.html">Shirts</a></li>
+      <li><a href="tshirts.html">T-Shirts</a></li>
+      <li><a href="pants.html">Pants & Shorts</a></li>
+      <li><a href="collections.html">New Collections</a></li>
+      <li><a href="access.html" class="active">Accessories & Toys</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Title -->
+  <section class="highlight">
+    <h2>🎁 Accessories & Toys</h2>
+    <p>Explore our collection of trendy accessories and fun toys</p>
+  </section>
+
+  <!-- Main Categories -->
+  <section class="categories">
+    <div class="card">
+      <img src="assets/images/accesstoys/capcover.webp" alt="Caps">
+      <h2>Caps</h2>    
+      <button onclick="toggleCollection('caps', this)">Click to See More</button>
+    </div>
+    <div class="card">
+      <img src="assets/images/accesstoys/watchcover.webp" alt="Watches">
+      <h2>Watches</h2>
+      <button onclick="toggleCollection('watches', this)">Click to See More</button>
+    </div>
+    <div class="card">
+      <img src="assets/images/accesstoys/pcover.webp" alt="Purses">  
+      <h2>Purses</h2>
+      <button onclick="toggleCollection('belts', this)">Click to See More</button>
+    </div>
+    <div class="card">
+      <img src="assets/images/accesstoys/toycover.webp" alt="Soft Toys">
+      <h2>Soft Toys</h2>
+      <button onclick="toggleCollection('soft', this)">Click to See More</button>
+    </div>
+  </section>
+
+  <!-- Caps -->
+  <section id="caps-collection" class="categories hidden">
+    <div class="card"><img src="assets/images/accesstoys/1cap.webp"><h2>Black</h2><p class="price">₹299</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/2cap.webp"><h2>Black</h2><p class="price">₹299</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/3cap.webp"><h2>Black</h2><p class="price">₹299</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/4cap.webp"><h2>Red</h2><p class="price">₹249</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/5cap.webp"><h2>Blue</h2><p class="price">₹249</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/6cap.webp"><h2>Yellow</h2><p class="price">₹249</p><button onclick="openModal(this)">View</button></div>  
+  </section>
+
+  <!-- Belts -->
+  <section id="belts-collection" class="categories hidden">
+    <div class="card"><img src="assets/images/accesstoys/pcover.webp"><h2>Leather purses</h2><p class="price">₹349</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/bcover.webp"><h2>Leather Belt</h2><p class="price">₹499</p><button onclick="openModal(this)">View</button></div>
+  </section>
+
+  <!-- Watches -->
+  <section id="watches-collection" class="categories hidden">
+    <div class="card"><img src="assets/images/accesstoys/watch1.webp"><h2>Black Watch</h2><p class="price">₹799</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/watch2.webp"><h2>Silver Watch</h2><p class="price">₹799</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/watch3.webp"><h2>Copper Watch</h2><p class="price">₹799</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/watch4.webp"><h2>Steel Watch</h2><p class="price">₹599</p><button onclick="openModal(this)">View</button></div>
+  </section>
+
+  <!-- Soft Toys -->
+  <section id="soft-collection" class="categories hidden">
+    <div class="card"><img src="assets/images/accesstoys/toy1.webp"><h2>Toys</h2><p class="price">₹99-299</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/toy2.webp"><h2>Toys</h2><p class="price">₹99-299</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/toy3.webp"><h2>Toys</h2><p class="price">₹99-299</p><button onclick="openModal(this)">View</button></div>
+    <div class="card"><img src="assets/images/accesstoys/toy4.webp"><h2>Toys</h2><p class="price">₹99-299</p><button onclick="openModal(this)">View</button></div>
+  </section>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <img id="modalImage" src="" alt="">
+      <h2 id="modalTitle"></h2>
+      <p id="modalPrice" class="price"></p>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-about">
+      <h2>CONFUSION CLOTHING</h2>
+      <p>Premium quality menswear collections & stylish accessories at affordable prices.<br>
+     Specially for men.</p>
+    </div>
+   
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <p>
+       <a href="https://instagram.com/confusion_deepak" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> 
+       <a href="https://facebook.com/CONFUSION21menswear/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a> 
+       <a href="https://wa.me/+919094032722" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Confusion Clothing | All Rights Reserved  <br>
+    Designed by <a href="https://www.instagram.com/wisdo_technologies" target="_blank">@Wisdo Technologies</a>
+  </div>
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    function toggleCollection(type, btn) {
+      const selectedSection = document.getElementById(type + "-collection");
+      const isHidden = selectedSection.classList.contains('hidden');
+      document.querySelectorAll('section[id$="-collection"]').forEach(sec => sec.classList.add('hidden'));
+      document.querySelectorAll('.categories .card button').forEach(b => b.classList.remove('active'));
+      if (isHidden) {
+        selectedSection.classList.remove('hidden');
+        btn.classList.add('active');
+        selectedSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    function openModal(button) {
+      const card = button.closest('.card');
+      const imgSrc = card.querySelector('img').src;
+      const title = card.querySelector('h2').innerText;
+      const price = card.querySelector('.price').innerText;
+      document.getElementById('modalImage').src = imgSrc;
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalPrice').innerText = price;
+      document.getElementById('imageModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('imageModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

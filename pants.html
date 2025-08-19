@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pants & Shorts - Confusion Menswear</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    .hidden { display: none !important; }
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 30px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 240px;
+    }
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card button {
+      margin-top: 10px;
+      background: gold;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .card button.active {
+      background: black;
+      color: white;
+    }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+    }
+    .modal-caption {
+      text-align: center;
+      color: white;
+      margin-top: 10px;
+    }
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 35px;
+      color: white;
+      cursor: pointer;
+      background: rgba(0,0,0,0.6);
+      padding: 5px 12px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Offer Bar -->
+<div class="top-bar">
+  <p>💖 Festive Offer on New Arrivals 💖</p>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="Logo">
+    Confusion Menswear
+  </div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shirts.html">Shirts</a></li>
+    <li><a href="tshirts.html">T-Shirts</a></li>
+    <li><a href="pants.html" class="active">Pants & Shorts</a></li>
+	<li><a href="access.html">Acessoriess</a></li>
+    <li><a href="collections.html">New Collections</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Page Title -->
+<section class="highlight">
+  <h2>👖 Pants & Shorts</h2>
+  <p>Explore our range of stylish pants and comfortable shorts</p>
+</section>
+
+<!-- Categories -->
+<section class="categories">
+  
+  <div class="card">
+    <img src="assets/images/formalpants.webp" alt="Formal Pants">
+    <h2>Formal Pants</h2>
+    <button onclick="toggleCollection('formal', this)">Click to See More</button>
+  </div>
+  <div class="card">
+    <img src="assets/images/tscover.webp" alt="Shorts">
+    <h2>Shorts</h2>
+    <button onclick="toggleCollection('shorts', this)">Click to See More</button>
+  </div>
+  <div class="card">
+    <img src="assets/images/pants/t4.webp" alt="Tracks">
+    <h2>Tracks</h2>
+    <button onclick="toggleCollection('tracks', this)">Click to See More</button>
+  </div>
+  </section>
+
+<!-- Jeans -->
+
+
+<!-- Formal Pants -->
+<section id="formal-collection" class="categories hidden">
+  <div class="card"><img src="assets/images/pants/formal1.webp"><h2>Sandal</h2><p>₹649</p><button onclick="openModal('assets/images/pants/formal1.webp','Black Formal - ₹649')">View</button></div>
+  <div class="card"><img src="assets/images/pants/formal2.webp"><h2>Grey bluish</h2><p>₹649</p><button onclick="openModal('assets/images/pants/formal2.webp','Grey Formal - ₹649')">View</button></div>
+  <div class="card"><img src="assets/images/pants/formal3.webp"><h2>Lite Grey</h2><p>₹649</p><button onclick="openModal('assets/images/pants/formal3.webp','Navy Formal - ₹649')">View</button></div>
+  <div class="card"><img src="assets/images/pants/formal1.webp"><h2>Lite sandal</h2><p>₹649</p><button onclick="openModal('assets/images/pants/formal4.webp','Black Formal - ₹649')">View</button></div>
+  <div class="card"><img src="assets/images/pants/formal2.webp"><h2>Grey greenish</h2><p>₹649</p><button onclick="openModal('assets/images/pants/formal5.webp','Grey Formal - ₹649')">View</button></div>
+</section>
+
+<!-- Shorts -->
+<section id="shorts-collection" class="categories hidden">
+  <div class="card"><img src="assets/images/pants/shorts1.webp"><h2>Jean Shorts</h2><p>₹399</p><button onclick="openModal('assets/images/pants/shorts1.webp','Jean Shorts - ₹399')">View</button></div>
+  <div class="card"><img src="assets/images/pants/shorts2.webp"><h2>Plain Shorts</h2><p>₹399</p><button onclick="openModal('assets/images/pants/shorts2.webp','Plain Shorts - ₹399')">View</button></div>
+  <div class="card"><img src="assets/images/pants/shorts3.webp"><h2>Plain Shorts</h2><p>₹399</p><button onclick="openModal('assets/images/pants/shorts3.webp','Plain Shorts - ₹399')">View</button></div>
+  <div class="card"><img src="assets/images/pants/shorts4.webp"><h2>Printed Shorts</h2><p>₹399</p><button onclick="openModal('assets/images/pants/shorts4.webp','Printed Shorts - ₹399')">View</button></div>
+  <div class="card"><img src="assets/images/pants/shorts5.webp"><h2>Printed Shorts</h2><p>₹399</p><button onclick="openModal('assets/images/pants/shorts5.webp','Printed Shorts - ₹399')">View</button></div>
+  <div class="card"><img src="assets/images/pants/shorts6.webp"><h2>Printed Shorts</h2><p>₹399</p><button onclick="openModal('assets/images/pants/shorts6.webp','Printed Shorts - ₹399')">View</button></div>
+</section>
+
+<!-- Track Pants -->
+<section id="tracks-collection" class="categories hidden">
+  <div class="card"><img src="assets/images/pants/t1.webp"><h2>Track</h2><p>₹449</p><button onclick="openModal('assets/images/pants/t1.webp','Track - ₹449')">View</button></div>
+  <div class="card"><img src="assets/images/pants/t2.webp"><h2>Track</h2><p>₹449</p><button onclick="openModal('assets/images/pants/t2.webp','Track - ₹449')">View</button></div>
+  <div class="card"><img src="assets/images/pants/t3.webp"><h2>Track</h2><p>₹449</p><button onclick="openModal('assets/images/pants/t3.webp','Track - ₹449')">View</button></div>
+  <div class="card"><img src="assets/images/pants/t4.webp"><h2>Track</h2><p>₹449</p><button onclick="openModal('assets/images/pants/t4.webp','Track - ₹449')">View</button></div>
+  <div class="card"><img src="assets/images/pants/t6.webp"><h2>Track</h2><p>₹449</p><button onclick="openModal('assets/images/pants/t6.webp','Track - ₹449')">View</button></div>
+  
+  </section>
+
+<!-- Modal -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div class="modal-caption" id="caption"></div>
+</div>
+
+ <!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-about">
+      <h2>CONFUSION CLOTHING</h2>
+	  <!-- Font Awesome Icons -->
+      <p>Premium quality menswear collections & stylish accessories at affordable prices.<br>
+     Specially for men.</p>
+    </div>
+   
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <p>
+       <a href="https://instagram.com/confusion_deepak" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> 
+       <a href="https://facebook.com/CONFUSION21menswear/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a> 
+       <a href="https://wa.me/+919094032722" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Confusion Clothing | All Rights Reserved  <br>
+    Designed by <a href="https://www.instagram.com/wisdo_technologies" target="_blank">@Wisdo Technologies</a>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+
+function toggleCollection(type, btn) {
+  const section = document.getElementById(type + "-collection");
+  const isHidden = section.classList.contains("hidden");
+
+  document.querySelectorAll('section[id$="-collection"]').forEach(sec => sec.classList.add("hidden"));
+  document.querySelectorAll(".categories .card button").forEach(b => b.classList.remove("active"));
+
+  if (isHidden) {
+    section.classList.remove("hidden");
+    btn.classList.add("active");
+    section.scrollIntoView({ behavior: "smooth" });
+  } else {
+    btn.classList.remove("active");
+    document.querySelector(".highlight").scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+function openModal(imgSrc, caption) {
+  document.getElementById("modalImage").src = imgSrc;
+  document.getElementById("caption").textContent = caption;
+  document.getElementById("imageModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
+window.onclick = function(e) {
+  if (e.target == document.getElementById("imageModal")) {
+    closeModal();
+  }
+};
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") closeModal();
+});
+</script>
+</body>
+</html>

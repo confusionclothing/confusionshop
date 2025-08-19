@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>T-Shirts - Confusion Menswear</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+  <style>
+    .hidden { display: none !important; }
+    .categories {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      padding: 30px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 240px;
+    }
+    .card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .card button {
+      margin-top: 10px;
+      background: gold;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .card button.active {
+      background: black;
+      color: white;
+    }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+    }
+    .modal-caption {
+      text-align: center;
+      color: white;
+      margin-top: 10px;
+    }
+    .close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 35px;
+      color: white;
+      cursor: pointer;
+      background: rgba(0,0,0,0.6);
+      padding: 5px 12px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Offer Bar -->
+<div class="top-bar">
+  <p>💖 Festive Offer on New Arrivals 💖</p>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="Logo">
+    Confusion Menswear
+  </div>
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <ul class="nav-links" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="shirts.html">Shirts</a></li>
+    <li><a href="tshirts.html" class="active">T-Shirts</a></li>
+    <li><a href="pants.html">Pants & Shorts</a></li>
+    <li><a href="collections.html">New Collections</a></li>
+	<li><a href="access.html">Acessoriess</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Page Title -->
+<section class="highlight">
+  <h2>T-Shirts</h2>
+  <p>Explore our range of stylish t-shirts</p>
+</section>
+
+<!-- Categories -->
+<section class="categories">
+  <div class="card">
+    <img src="assets/images/tshirts/full-cover.webp" alt="Full Sleeve">
+    <h2>Full Sleeve</h2>
+    <button onclick="toggleCollection('full', this)">Click to See More</button>
+  </div>
+  <div class="card">
+    <img src="assets/images/tcover.webp" alt="Half Sleeve">
+    <h2>Half Sleeve</h2>
+    <button onclick="toggleCollection('half', this)">Click to See More</button>
+  </div>
+</section>
+
+<!-- Full Sleeve T-Shirts -->
+<section id="full-collection" class="categories hidden">
+  <div class="card"><img src="assets/images/tshirts/full1.webp"><h2>Purple full</h2><p>₹499</p><button onclick="openModal('assets/images/tshirts/full1.webp','Full Sleeve - ₹499')">View</button></div>
+  <div class="card"><img src="assets/images/tshirts/full2.webp"><h2>Purple full</h2><p>₹449</p><button onclick="openModal('assets/images/tshirts/full2.webp','Full Sleeve - ₹499')">View</button></div>
+  <div class="card"><img src="assets/images/tshirts/full3.webp"><h2>Blue full</h2><p>₹499</p><button onclick="openModal('assets/images/tshirts/full3.webp','Full Sleeve - ₹499')">View</button></div>
+  <div class="card"><img src="assets/images/tshirts/full4.webp"><h2>Blue full</h2><p>₹499</p><button onclick="openModal('assets/images/tshirts/full4.webp','ll Sleeve - ₹499')">View</button></div>
+  <div class="card"><img src="assets/images/tshirts/full5.webp"><h2>Brown full</h2><p>₹449</p><button onclick="openModal('assets/images/tshirts/full5.webp','Full Sleeve - ₹499')">View</button></div>
+  <div class="card"><img src="assets/images/tshirts/full6.webp"><h2>Brown full</h2><p>₹499</p><button onclick="openModal('assets/images/tshirts/full6.webp','Full Sleeve - ₹499')">View</button></div>
+  <div class="card"><img src="assets/images/tshirts/full7.webp"><h2>Red full</h2><p>₹499</p><button onclick="openModal('assets/images/tshirts/full7.webp','Full Sleeve - ₹499')">View</button></div>
+  <div class="card"><img src="assets/images/tshirts/full8.webp"><h2>Red full</h2><p>₹449</p><button onclick="openModal('assets/images/tshirts/full8.webp','Full Sleeve - ₹499')">View</button></div>
+  <div class="card"><img src="assets/images/tshirts/full9.webp"><h2>Orange full</h2><p>₹499</p><button onclick="openModal('assets/images/tshirts/full9.webp','Full Sleeve - ₹499')">View</button></div>
+  <div class="card"><img src="assets/images/tshirts/full10.webp"><h2>Orange full</h2><p>₹499</p><button onclick="openModal('assets/images/tshirts/full10.webp','Full Sleeve - ₹499')">View</button></div>
+  <div class="card"><img src="assets/images/tshirts/full11.webp"><h2>Black full</h2><p>₹499</p><button onclick="openModal('assets/images/tshirts/full11.webp','Full Sleeve - ₹499')">View</button></div>
+  <div class="card"><img src="assets/images/tshirts/full12.webp"><h2>Black full</h2><p>₹499</p><button onclick="openModal('assets/images/tshirts/full12.webp','Full Sleeve - ₹499')">View</button></div>
+
+</section>
+
+<!-- Half Sleeve T-Shirts -->
+<section id="half-collection" class="categories hidden">
+  <div class="card"><img src="assets/images/tshirts/hs1.webp" onclick="openModal(this.src, '₹399 - Half Sleeve')"><h2>White/Black</h2><p class="price">₹399</p><button onclick="openModal('assets/images/tshirts/hs1.webp','₹399 - Half Sleeve')">View</button></div>
+    <div class="card"><img src="assets/images/tshirts/hs2.webp" onclick="openModal(this.src, '₹399 - Half Sleeve')"><h2>White/Black</h2><p class="price">₹399</p><button onclick="openModal('assets/images/tshirts/hs2.webp','₹399 - Half Sleeve')">View</button></div>
+    <div class="card"><img src="assets/images/tshirts/hs3.webp" onclick="openModal(this.src, '₹399 - Half Sleeve')"><h2>White/Black</h2><p class="price">₹399</p><button onclick="openModal('assets/images/tshirts/hs3.webp','₹399 - Half Sleeve')">View</button></div>  
+   
+    <div class="card"><img src="assets/images/tshirts/hs4.webp" onclick="openModal(this.src, '₹399 - Half Sleeve')"><h2>Purple</h2><p class="price">₹399</p><button onclick="openModal('assets/images/tshirts/hs4.webp','₹399 - Half Sleeve')">View</button></div>
+    <div class="card"><img src="assets/images/tshirts/hs5.webp" onclick="openModal(this.src, '₹399 - Half Sleeve')"><h2>Black</h2><p class="price">₹399</p><button onclick="openModal('assets/images/tshirts/hs5.webp','₹399 - Half Sleeve')">View</button></div>
+    <div class="card"><img src="assets/images/tshirts/hs6.webp" onclick="openModal(this.src, '₹399 - Half Sleeve')"><h2>Green</h2><p class="price">₹399</p><button onclick="openModal('assets/images/tshirts/hs6.webp','₹399 - Half Sleeve')">View</button></div>
+
+	<div class="card"><img src="assets/images/tshirts/hs7.webp" onclick="openModal(this.src, '₹399 - Half Sleeve')"><h2>Orange</h2><p class="price">₹399</p><button onclick="openModal('assets/images/tshirts/hs7.webp','₹399 - Half Sleeve')">View</button></div>
+    <div class="card"><img src="assets/images/tshirts/hs8.webp" onclick="openModal(this.src, '₹399 - Half Sleeve')"><h2>Green</h2><p class="price">₹399</p><button onclick="openModal('assets/images/tshirts/hs8.webp','₹399 - Half Sleeve')">View</button></div>
+    
+	<div class="card"><img src="assets/images/tshirts/hs9.webp" onclick="openModal(this.src, '₹299 - Half Sleeve')"><h2>Maroon</h2><p class="price">₹299</p><button onclick="openModal('assets/images/tshirts/hs9.webp','₹299 - Half Sleeve')">View</button></div>
+    <div class="card"><img src="assets/images/tshirts/hs10.webp" onclick="openModal(this.src, '₹299 - Half Sleeve')"><h2>Blue</h2><p class="price">₹299</p><button onclick="openModal('assets/images/tshirts/hs10.webp','₹299 - Half Sleeve')">View</button></div>
+    <div class="card"><img src="assets/images/tshirts/hs11.webp" onclick="openModal(this.src, '₹299 - Half Sleeve')"><h2>Black</h2><p class="price">₹299</p><button onclick="openModal('assets/images/tshirts/hs11.webp','₹299 - Half Sleeve')">View</button></div>
+
+</section>
+
+<!-- Modal -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+  <div class="modal-caption" id="caption"></div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-about">
+      <h2>CONFUSION CLOTHING</h2>
+	  <!-- Font Awesome Icons -->
+      <p>Premium quality menswear collections & stylish accessories at affordable prices.<br>
+     Specially for men.</p>
+    </div>
+   
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <p>
+       <a href="https://instagram.com/confusion_deepak" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> 
+       <a href="https://facebook.com/CONFUSION21menswear/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a> 
+       <a href="https://wa.me/+919094032722" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Confusion Clothing | All Rights Reserved <br>
+    Designed by <a href="https://www.instagram.com/wisdo_technologies" target="_blank">@Wisdo Technologies</a>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("show");
+}
+
+function toggleCollection(type, btn) {
+  const section = document.getElementById(type + "-collection");
+  const isHidden = section.classList.contains("hidden");
+
+  document.querySelectorAll('section[id$="-collection"]').forEach(sec => sec.classList.add("hidden"));
+  document.querySelectorAll(".categories .card button").forEach(b => b.classList.remove("active"));
+
+  if (isHidden) {
+    section.classList.remove("hidden");
+    btn.classList.add("active");
+    section.scrollIntoView({ behavior: "smooth" });
+  } else {
+    btn.classList.remove("active");
+    document.querySelector(".highlight").scrollIntoView({ behavior: "smooth" });
+  }
+}
+
+function openModal(imgSrc, caption) {
+  document.getElementById("modalImage").src = imgSrc;
+  document.getElementById("caption").textContent = caption;
+  document.getElementById("imageModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
+window.onclick = function(e) {
+  if (e.target == document.getElementById("imageModal")) {
+    closeModal();
+  }
+};
+
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") closeModal();
+});
+</script>
+</body>
+</html>

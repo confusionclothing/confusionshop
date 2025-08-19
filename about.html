@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Confusion Menswear</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    /* Gradient About Us Header */
+    .about-header {
+      background: linear-gradient(135deg, #8e3b8e, #ff4f9a);
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .about-header h1 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+    .about-header p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* Our Story Section */
+    .our-story {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      background: white;
+    }
+    .our-story img {
+      max-width: 400px;
+      border-radius: 10px;
+      margin: 10px;
+    }
+    .story-text {
+      max-width: 600px;
+      margin: 10px;
+      text-align: center;
+    }
+    .story-text h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #8e3b8e;
+    }
+    .story-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Why Choose Us Section */
+    .why-choose {
+      background-color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .why-choose h2 {
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #8e3b8e;
+    }
+    .choose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .choose-card {
+      background: #fdfdfd;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .choose-card:hover {
+      transform: translateY(-5px);
+    }
+    .choose-card i {
+      font-size: 40px;
+      color: #ff4f9a;
+      margin-bottom: 15px;
+    }
+    .choose-card h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+    .choose-card p {
+      color: #666;
+      font-size: 15px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit;">
+        <img src="assets/images/logo.png" alt="Logo" style="height:40px;">
+        Confusion Menswear
+      </a>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shirts.html">Shirts</a></li>
+      <li><a href="tshirts.html">T-Shirts</a></li>
+      <li><a href="pants.html">Pants & Shorts</a></li>
+      <li><a href="collections.html">New Collections</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Header -->
+  <section class="about-header">
+    <h1>About Us</h1>
+    <p>Delivering style and comfort with every piece since 2020</p>
+  </section>
+
+  <!-- Our Story -->
+  <section class="our-story">
+    <img src="assets/images/store.webp" alt="Confusion Menswear Store">
+    <div class="story-text">
+      <h2>Our Story</h2>
+      <p>
+        At Confusion Menswear, we believe fashion should be timeless, comfortable, and stylish.  
+        We carefully curate every shirt, pant, and accessory to meet the highest standards in quality and design.  
+        From formal elegance to casual cool, our collections are crafted for the modern man.  
+        <br><br>
+        Our mission is simple — to bring premium quality clothing at affordable prices, making every customer feel confident and comfortable.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose">
+    <h2>Why Choose Us?</h2>
+    <div class="choose-grid">
+      <div class="choose-card">
+        <i class="fas fa-tshirt"></i>
+        <h3>Premium Quality</h3>
+        <p>Only the finest fabrics and stitching for long-lasting comfort.</p>
+      </div>
+      <div class="choose-card">
+        <i class="fas fa-tags"></i>
+        <h3>Affordable Prices</h3>
+        <p>Style that fits your budget without compromising quality.</p>
+      </div>
+      <div class="choose-card">
+        <i class="fas fa-shipping-fast"></i>
+        <h3>Fast Delivery</h3>
+        <p>Get your orders quickly with our reliable shipping service.</p>
+      </div>
+      <div class="choose-card">
+        <i class="fas fa-smile"></i>
+        <h3>Customer Satisfaction</h3>
+        <p>Our customers are at the heart of everything we do.</p>
+      </div>
+    </div>
+  </section>
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Test</title>
+
+  <!-- ✅ Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ Font Awesome (Icons Work) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body { margin:0; padding:0; }
+
+    .footer {
+      width: 100%;
+      margin: 0;
+      padding: 40px 0 15px;
+      background: linear-gradient(135deg, #6a11cb, #b91372);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 0 40px;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    .footer h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #ffeb3b;
+    }
+
+    .footer h3 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid rgba(255,255,255,0.3);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .footer ul { list-style: none; padding: 0; }
+    .footer ul li { margin: 6px 0; }
+
+    .footer ul li a {
+      color: #f5f5f5;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer ul li a:hover { color: #ffeb3b; padding-left: 5px; }
+
+    .footer-social a {
+      color: #f5f5f5;
+      margin-right: 15px;
+      font-size: 15px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .footer-social a i {
+      margin-right: 6px;
+      font-size: 16px;
+      color: #ffd700;
+    }
+
+    .footer-social a:hover i { color: #fff; }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 25px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.3);
+      font-size: 14px;
+    }
+
+    .footer-bottom a {
+      color: #ffeb3b;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-about">
+      <h2>CONFUSION CLOTHING</h2>
+	  <!-- Font Awesome Icons -->
+      <p>Premium quality menswear collections & stylish accessories at affordable prices.<br>
+     Specially for men.</p>
+    </div>
+   
+    <div class="footer-social">
+      <h3>Follow Us</h3>
+      <p>
+       <a href="https://instagram.com/confusion_deepak" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> 
+       <a href="https://facebook.com/CONFUSION21menswear/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a> 
+       <a href="https://wa.me/+919094032722" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Confusion Clothing | All Rights Reserved  <br>
+    Designed by <a href="https://www.instagram.com/wisdo_technologies" target="_blank">@Wisdo Technologies</a>
+  </div>
+</footer>
+
+</body>
+</html>
+
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+
+</body>
+</html>
